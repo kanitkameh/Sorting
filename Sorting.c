@@ -14,7 +14,7 @@ int main(){
     int n[N];
     readArray(n);
 
-    selectionSortArray(n);
+    insertionSortArray(n);
     printArray(n);
     return 0;
 }
@@ -52,7 +52,11 @@ void selectionSortArray(int n[]){
     }
 }
 void insertionSortArray(int n[]){
-
+    for(int i=1;i<N;i++){
+        for(int j=i;j>0&&n[j]<n[j-1];j--){
+            swap(&n[j],&n[j-1]);
+        }
+    }
 }
 void swap(int *n1, int *n2){
     int swap = *n1;
